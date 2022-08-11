@@ -2,11 +2,18 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Services\DeveloperService;
 use Illuminate\Database\Seeder;
 
 class DeveloperTableSeeder extends Seeder
 {
+    private DeveloperService $developerService;
+
+    public function __construct(DeveloperService $developerService)
+    {
+        $this->developerService = $developerService;
+    }
+
     /**
      * Run the database seeds.
      *
@@ -42,6 +49,8 @@ class DeveloperTableSeeder extends Seeder
             ],
         ];
 
-        //TODO:Insert fc will be added.
+        foreach ($developers as $developer) {
+            $this->developerService->store($developer);
+        }
     }
 }
