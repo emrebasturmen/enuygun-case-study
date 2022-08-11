@@ -26,14 +26,14 @@ class HomeController extends Controller
     }
 
     /**
-     * @return void
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        $developers = Developer::orderBy('hourly_capacity','ASC')->get()->toArray();
-        $tasks = Task::select('name',DB::raw('duration * difficulty as duration'), DB::raw('1 as difficulty'))->orderBy('duration','ASC')->get()->toArray();
+        $developers = Developer::orderBy('hourly_capacity', 'ASC')->get()->toArray();
+        $tasks = Task::select('name', DB::raw('duration * difficulty as duration'), DB::raw('1 as difficulty'))->orderBy('duration', 'ASC')->get()->toArray();
         $planning = $this->taskSchedule->schedule($tasks, $developers);
 
-        dd($planning);
+        return view('home', compact('planning'));
     }
 }
