@@ -112,8 +112,8 @@ class TaskSchedule
                 $developerName = $developer['name'];
                 $taskDetail = $this->getTask($tasks, $developer['weekly_capacity']);
 
-                $week[$developerName]['total_capacity'] = $developer['weekly_capacity'];
-                $week[$developerName]['total_duration'] = $taskDetail['total_duration'];
+                $week[$developerName]['totalCapacity'] = $developer['weekly_capacity'];
+                $week[$developerName]['totalDuration'] = $taskDetail['totalDuration'];
                 $week[$developerName]['tasks'] = $taskDetail['tasks'];
             }
         }
