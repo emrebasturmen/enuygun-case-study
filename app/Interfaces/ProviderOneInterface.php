@@ -2,7 +2,7 @@
 
 namespace App\Interfaces;
 
-interface ProviderTwo
+interface ProviderOneInterface
 {
     public function insert();
 }
