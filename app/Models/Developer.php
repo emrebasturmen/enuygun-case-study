@@ -41,7 +41,7 @@ class Developer extends Model
     /**
      * @return mixed
      */
-    public function getNameAttribute(): mixed
+    public function getName(): mixed
     {
         return $this->name;
     }
@@ -58,7 +58,7 @@ class Developer extends Model
     /**
      * @return mixed
      */
-    public function getHourlyCapacityAttribute(): mixed
+    public function getHourly(): mixed
     {
         return $this->hourly_capacity;
     }
@@ -75,7 +75,7 @@ class Developer extends Model
     /**
      * @return mixed
      */
-    public function getWeeklyCapacityAttribute(): mixed
+    public function getWeeklyCapacity(): mixed
     {
         return $this->weekly_capacity;
     }

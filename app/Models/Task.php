@@ -42,7 +42,7 @@ class Task extends Model
     /**
      * @return mixed
      */
-    public function getNameAttribute(): mixed
+    public function getName(): mixed
     {
         return $this->name;
     }
@@ -59,7 +59,7 @@ class Task extends Model
     /**
      * @return mixed
      */
-    public function getDifficultyAttribute(): mixed
+    public function getDifficulty(): mixed
     {
         return $this->difficulty;
     }
@@ -76,7 +76,7 @@ class Task extends Model
     /**
      * @return mixed
      */
-    public function getDurationAttribute(): mixed
+    public function getDuration(): mixed
     {
         return $this->duration;
     }
