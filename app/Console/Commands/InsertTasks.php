@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Interfaces\ProviderOne;
-use App\Interfaces\ProviderTwo;
+use App\Interfaces\ProviderOneInterface;
+use App\Interfaces\ProviderTwoInterface;
 use Illuminate\Console\Command;
 
 class InsertTasks extends Command
@@ -27,7 +27,7 @@ class InsertTasks extends Command
      *
      * @return int
      */
-    public function handle(ProviderOne $providerOne,ProviderTwo $providerTwo)
+    public function handle(ProviderOneInterface $providerOne, ProviderTwoInterface $providerTwo)
     {
         $providerOne->insert();
         $providerTwo->insert();
